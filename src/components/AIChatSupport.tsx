@@ -4,7 +4,7 @@ import fetchAPI from "../api/fetchAPI.ts";
 
 
 
-const BubbleMessage = ({message,id,isUser}: { message: string,id:any,isUser:boolean }) => {
+const BubbleMessage = ({message,id,isUser}: { message: string,id:number,isUser:boolean }) => {
     function cleanText(input: string): string {
 
         const cleaned = input
