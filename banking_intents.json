@@ -1,0 +1,169 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Hey",
+        "Good day",
+        "How are you?"
+      ],
+      "responses": [
+        "Hello! How can I assist you with your banking needs today? 🏦",
+        "Hi there! Welcome to [Bank Name] support. How can I help you?"
+      ]
+    },
+    {
+      "tag": "account_balance",
+      "patterns": [
+        "How do I check my balance?",
+        "What's my current balance?",
+        "Account balance",
+        "Current balance"
+      ],
+      "responses": [
+        "You can check your balance through our mobile app, online banking, or by texting BAL to 12345. Would you like me to guide you through the process?",
+        "For security reasons, I can't display your balance here, but I can help you access it through our secure channels. Would you like to: \n1. Log in to online banking \n2. Open the mobile app \n3. Receive SMS instructions"
+      ]
+    },
+    {
+      "tag": "money_transfer",
+      "patterns": [
+        "How do I transfer money?",
+        "Send money to another account",
+        "Wire transfer",
+        "Domestic transfer"
+      ],
+      "responses": [
+        "You can transfer money through: \n1. Online Banking (Transfers > New Transfer) \n2. Mobile App (Pay & Transfer) \n3. In-branch \nWould you like step-by-step instructions for any of these options? 💸",
+        "To transfer money securely: \n1. Log in to your account \n2. Navigate to Transfers \n3. Select recipient \n4. Enter amount \n5. Confirm details \nWould you like assistance with any specific step?"
+      ]
+    },
+    {
+      "tag": "lost_card",
+      "patterns": [
+        "I lost my card",
+        "My card was stolen",
+        "Report lost card",
+        "Block my debit card"
+      ],
+      "responses": [
+        "I'm sorry to hear that. Let's secure your account immediately. I can: \n1. Temporarily block your card \n2. Guide you through replacement \n3. Connect you to fraud prevention \nWhich would you prefer? 🔒",
+        "For immediate card blocking, please call our 24/7 hotline at 1-800-123-4567. Would you like me to help you with replacement card procedures instead?"
+      ]
+    },
+    {
+      "tag": "loan_inquiry",
+      "patterns": [
+        "How to apply for a loan?",
+        "Personal loan options",
+        "Mortgage rates",
+        "Auto loan application"
+      ],
+      "responses": [
+        "We offer various loan options with competitive rates. Would you like to: \n1. See current rates \n2. Check eligibility \n3. Start application \n4. Calculate monthly payments 💰",
+        "Our loan specialists can help you find the best option. Let me ask: \n• Loan amount needed? \n• Preferred repayment period? \n• Purpose of the loan? \n(You can share general terms without personal details)"
+      ]
+    },
+    {
+      "tag": "transaction_history",
+      "patterns": [
+        "View transaction history",
+        "Recent transactions",
+        "Account statement",
+        "Download statement"
+      ],
+      "responses": [
+        "You can access transactions: \n1. Last 30 days: Mobile app \n2. Custom dates: Online banking \n3. Official statements: Secure Messages \nNeed help navigating to any of these? 📊",
+        "For full transaction history: \n1. Log in to online banking \n2. Go to Accounts > Statements \n3. Select date range \n4. Download PDF \nWould you like visual guidance?"
+      ]
+    },
+    {
+      "tag": "update_info",
+      "patterns": [
+        "Change my address",
+        "Update phone number",
+        "Change email",
+        "Modify personal information"
+      ],
+      "responses": [
+        "To update your information securely: \n1. Log in to online banking \n2. Go to Profile Settings \n3. Select information to update \n4. Submit verification \nNeed assistance with any step? 📝",
+        "For security, some changes require document verification. Would you prefer to: \n1. Update online now \n2. Visit a branch \n3. Send secure documents"
+      ]
+    },
+    {
+      "tag": "fees_charges",
+      "patterns": [
+        "What are the account fees?",
+        "Monthly maintenance charge",
+        "Overdraft fees",
+        "ATM charges"
+      ],
+      "responses": [
+        "Our standard fees include: \n• Monthly fee: $10 (waived with $1,500 balance) \n• ATM fee: $2.50 for non-network \n• Wire transfer: $25 domestic/$45 international \nWould you like detailed fee schedule or ways to waive fees? 💳",
+        "Many fees can be avoided with qualifying activities. For your specific account type (checking/savings/business), I can provide personalized information. Could you specify your account type?"
+      ]
+    },
+    {
+      "tag": "card_activation",
+      "patterns": [
+        "Activate new card",
+        "My card isn't working",
+        "Activate debit card",
+        "Credit card activation"
+      ],
+      "responses": [
+        "To activate your card: \n1. Call 1-888-123-4567 \n2. Use mobile app: Cards > Activate \n3. Visit ATM & make PIN-based transaction \nWhich method works best for you? ✅",
+        "For security, please have your card and ID ready. Would you like me to: \n1. Connect you to automated activation \n2. Send SMS instructions \n3. Guide through app activation"
+      ]
+    },
+    {
+      "tag": "branch_locator",
+      "patterns": [
+        "Find nearest branch",
+        "ATM locations",
+        "Where are your branches?",
+        "Local branch near me"
+      ],
+      "responses": [
+        "I can help find locations! Please share: \n• City/ZIP code \n• Services needed (notary, loan signing, etc.) \n• Accessibility requirements 🗺️",
+        "Our branch locator can show: \n1. Open now \n2. 24/7 ATMs \n3. Drive-thru services \nWould you like me to send a link to our interactive map?"
+      ]
+    },
+    {
+      "tag": "password_reset",
+      "patterns": [
+        "Forgot password",
+        "Reset my password",
+        "Can't log in",
+        "Locked out of account"
+      ],
+      "responses": [
+        "Let's reset your password securely: \n1. Visit our login page \n2. Click 'Forgot Password' \n3. Verify identity \n4. Create new password \nNeed the direct link? 🔑",
+        "For account security, we'll need to verify your identity. Would you prefer to: \n1. Receive SMS verification code \n2. Answer security questions \n3. Visit a branch"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "Thank you",
+        "That's all"
+      ],
+      "responses": [
+        "Happy to help! Don't hesitate to reach out again. Have a great day! 🌟",
+        "Thank you for choosing [Bank Name]. Remember we're here 24/7 for your banking needs! 👋"
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "I'm still learning about banking services! For complex requests, please contact our human specialists at 1-800-123-4567.",
+        "I want to ensure you get accurate help. Would you like me to connect you to our customer service team?"
+      ]
+    }
+  ]
+}
