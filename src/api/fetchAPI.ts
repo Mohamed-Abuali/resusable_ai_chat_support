@@ -1,6 +1,6 @@
 import {GoogleGenerativeAI } from '@google/generative-ai'
 
-import bankingIntents from '../../banking_intents.json' assert { type: 'json' };
+import bankingIntents from '../../conversation_intents.json' assert { type: 'json' };
 const jsonString = JSON.stringify(bankingIntents);
 
 const genAI = new GoogleGenerativeAI('AIzaSyBwG0Z3KKMp-DtAJCmxEGjBBEV1WH5vrU8')

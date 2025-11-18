@@ -1,4 +1,4 @@
-import {useState,useEffect} from "react"
+import {useState} from "react"
 import fetchAPI from "../api/fetchAPI.ts";
 
 
@@ -20,7 +20,9 @@ const BubbleMessage = ({message,id,isUser}: { message: string,id:number,isUser:b
             .replace(/(\d+\.\s+)(.+)/g, '<li>$2</li>')
             // Convert dashed lists
             .replace(/-\s+(.+)/g, '<li>$1</li>')
-            .replace(/<\/?em>/g, '')    // Remove <em> and </em> tags
+            .replace(/<\/?em>/g, '')
+            .replace(/<\/li>/g, '\n')// Remove <li> and </li> tags
+            .replace(/<li>/g, '**')
             .replace(/\*+/g, '');
             // Preserve paragraphs
             //.replace(/\n\n/g, '</p><p>')
@@ -33,14 +35,17 @@ const BubbleMessage = ({message,id,isUser}: { message: string,id:number,isUser:b
 
     const formattedHTML = cleanText(message);
     return (
-        <div key={id} className={` w-2/3 min-h-10 h-auto  flex text-wrap  items-center ${isUser ? 'justify-end' : 'justify-start'} `}>
+        <div key={id}
+             className={` w-3/4 min-h-10 h-auto  flex flex-row gap-2 text-wrap  items-start ${isUser ? 'justify-end' : 'justify-start'} `}>
+            {!isUser && <h6 className={`text-white rounded-full bg-cyan-600 w-7 h-auto`}>Ema:</h6>}
             <p className={`text-wrap`}>{isUser ? message : formattedHTML}</p>
+            
         </div>
     )
 }
 
 interface Customize {
-    color?:string,
+    color?: string,
     show?: boolean,
     shape?:number,
     avatar?: string,
@@ -64,12 +69,11 @@ const AiChatSupport = (prams:Customize) => {
     setIsOpen((prev) => !prev)
     }
 
-
     interface InputUser {
         text:string,
         isUser: boolean,
     }
-    
+
     const handleMessage = (inputUser: InputUser) => {
         const { text, isUser } = inputUser;
         setMessgae((prevMessages) => {
@@ -83,10 +87,7 @@ const AiChatSupport = (prams:Customize) => {
             ];
         });
     };
-    useEffect(() => {
 
-
-    }, []);
     const sendHandler = async () =>{
         console.log(input)
         setIsLoading(true);
@@ -99,11 +100,13 @@ const AiChatSupport = (prams:Customize) => {
             handleMessage({ text: aiRespone, isUser: false })
         }
     }
+
+
     return (
-        <div  className={`fixed  bottom-4 right-4 cursor-pointer ${isOpen ? 'lg:w-10':'lg:w-24'}  lg:h-10 transition-all ease-in-out duration-500  py-1 px-1 rounded-2xl bg-slate-400 sm:w-24 flex justify-start item-end`}>
+        <div  className={`fixed ${prams.show && 'hidden'}  bottom-4 right-4 cursor-pointer ${isOpen ? 'lg:w-10':'lg:w-24'}  lg:h-10 transition-all ease-in-out duration-500  py-1 px-1 rounded-2xl ${prams.color? `bg-[#${prams.color}]` :`bg-slate-400`} sm:w-24 flex justify-start item-end`}>
             {/*the shape with the chat is minimized with an avatar or icon and a simple text that ask the user is he want a support or help */}
-                        <div onClick={handleClick} className={`flex justify-around items-center w-full transition-all ease-in-out duration-500 `}>
-                            <img className={`rounded-full bg-blue-50`} width={28} height={28}/>
+                        <div onClick={handleClick} className={`flex justify-around items-center w-full p-3 transition-all ease-in-out duration-500 `}>
+                           
                         <h6 className={`text-right font-semibold  ${isOpen ? 'hidden':'block'}`}>Help?</h6>
                         </div>
             {/*The Chat Window*/}

@@ -1,4 +1,4 @@
-import bankingIntents from '../../banking_intents.json';
+import bankingIntents from '../../conversation_intents.json';
 import { BankingIntent, BankingIntents } from '../types/types';
 
 // Type assertion for JSON import
