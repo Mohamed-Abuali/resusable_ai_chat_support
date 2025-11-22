@@ -11,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Input } from "@/components/ui/input"
 import { BubbleMessage } from './AIChatSupportBubble'
+import { Spinner } from "@/components/ui/spinner"
 import fetchAPI from "../api/fetchAPI.ts";
  interface InputUser {
         text:string,
@@ -98,7 +99,7 @@ const AIChatSupportBox = ({isOpen}:BoxProp) => {
                             {/* the message input box*/}
                                   
                                         <Input type={`text`} value={input}  onChange={(e) => setInput(e.target.value)} className={`w-[85%] h-full  bg-transparent px-2`}/>
-                                        <Button onClick={sendHandler} className={`w-[15%] cursor-pointer h-full hover:bg-slate-500 font-semibold  hover:text-white transition-all duration-300 ease-in-out`}>{isLoading? '...' : 'Send'}</Button>
+                                        <Button onClick={sendHandler} className={`w-[15%] cursor-pointer h-full hover:bg-slate-500 font-semibold  hover:text-white transition-all duration-300 ease-in-out`}>{isLoading? <Spinner /> : 'Send'}</Button>
                         </CardFooter>
     
     
