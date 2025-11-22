@@ -58,7 +58,7 @@ const AIChatSupportBox = ({isOpen}:BoxProp) => {
 
 
   return (
-    <Card className={` w-[500px] ${isOpen ? 'block':'hidden'}`}>
+    <Card className={`w-[clamp(300px,40vw,500px)] ${isOpen ? 'block':'hidden'}`}>
                 <CardHeader>
                     <CardTitle>AI Chat Support</CardTitle>
 
@@ -98,7 +98,7 @@ const AIChatSupportBox = ({isOpen}:BoxProp) => {
                             {/* the message input box*/}
                                   
                                         <Input type={`text`} value={input}  onChange={(e) => setInput(e.target.value)} className={`w-[85%] h-full  bg-transparent px-2`}/>
-                                        <Button onClick={sendHandler} className={`w-[15%] cursor-pointer h-full hover:bg-slate-500 font-semibold  hover:text-white transition-all duration-300 ease-in-out`}>{isLoading? '...Loading' : 'Send'}</Button>
+                                        <Button onClick={sendHandler} className={`w-[15%] cursor-pointer h-full hover:bg-slate-500 font-semibold  hover:text-white transition-all duration-300 ease-in-out`}>{isLoading? '...' : 'Send'}</Button>
                         </CardFooter>
     
     
