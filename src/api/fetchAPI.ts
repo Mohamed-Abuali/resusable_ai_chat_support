@@ -4,7 +4,7 @@ import bankingIntents from '../../conversation_intents.json' assert { type: 'jso
 const jsonString = JSON.stringify(bankingIntents);
 
 // const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
-const ai = new GoogleGenAI({ apiKey: 'AIzaSyBkj5ytpx0afYuc_dKspwMtrgr7vhoxb6o' });
+const ai = new GoogleGenAI({ apiKey: process.env["GEMINI_API_KEY"]! });
 
 
 interface fetchPrams {
